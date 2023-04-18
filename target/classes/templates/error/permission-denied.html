@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Area</title>
+<link rel="stylesheet" type="text/css" href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<header>
+		<h1>LibraryDatabase</h1>
+	</header>
+	
+	<main class="indexGrid">
+		
+		<h2>You do not have access to this area!</h2><br>
+		<h3>Authenticate <a href="#" th:href="@{/user}"> here </a> </h3>
+		
+	</main>
+	
+	<footer>
+		
+	</footer>
+
+</body>
+</html>

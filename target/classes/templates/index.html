@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Database</title>
+<link rel="stylesheet" type="text/css" href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+</head>
+
+<body>
+	<header>
+		<h1>LibraryDatabase</h1>
+	</header>
+	
+	<main class="indexGrid">
+	<div class="main">
+		<h2 class="sub-head">Welcome to the Library Database</h2><br>
+		<table class=books>
+			<tr>
+				<th>Title</th> <th>Author</th> <th>Reviews</th>
+			</tr>
+			<tr th:each="book : ${books}" >
+				<td th:text="${book.title}"></td>
+				<td th:text="${book.author}"></td>
+				<td> <a href="#" th:href="|books/reviews/${book.id}|">View</a> </td>
+			</tr>
+		</table><br>
+		<p>Login<a href="#" th:href="@{/user}"> here</a> </p><br>
+		<div th:if="${message}">
+			<h4 th:text="${message}" style="color:rgba(249, 180, 45, 0.6)"></h4>
+		</div>
+	</div>
+	</main>
+	
+	<footer>
+	
+	</footer>
+</body>
+</html>

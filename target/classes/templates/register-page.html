@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<script src="../static/js/script.js" th:src="@{/css/script.js}"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<header>
+		<h1>LibraryDatabase</h1>
+	</header>
+	
+	<main class="indexGrid">
+	<div class="register-screen">
+		<h2 class="sub-head">Register Here</h2>
+		<div th:if="${param.error}" style="color: red;">
+			<p>Invalid character</p>
+		</div><br>
+		<form action="#" th:action="@{/register}" method="post" onsubmit="return verify()">	
+			<p>User Name: <input type="text" name="username" /></p>
+			<p>Password: <input type="text" name="password" /></p>		
+			<input type="submit" value="Register" />	
+		</form>
+		<br>
+	</div>
+	</main>
+	<br>
+	<p><a href="" th:href="@{/}">Back Home</a></p>
+	
+	<footer>
+		
+	</footer>
+
+</body>
+</html>

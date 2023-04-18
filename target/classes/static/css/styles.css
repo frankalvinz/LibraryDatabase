@@ -1,0 +1,93 @@
+.error {/*sets the text of error class to red*/
+	color: red;
+	}
+
+
+body { /*sets the font-family and background image + its gradients for the <body> tag*/
+	background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.7)), url('../images/BackgroundImage1.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	color: rgba(255, 255, 255, 0.8);
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  header { /*sets the color of the <header> container whilst properly centering its contents*/
+	  background-color:rgba(249, 180, 45, 0.5);
+	  text-align: center;
+	  padding: 2em;
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: space-evenly;
+	  align-items: center;
+  }
+  
+  .indexGrid { /*sets the indexGrid class display to a grid format and grid template areas*/
+	display: grid;
+	overflow-wrap: anywhere;
+	padding-left: 15%;
+	padding-right: 5%;
+	justify-content: space-evenly;
+	width: 80%;
+	grid-template-areas: 'hdr hdr'
+						 'min min '
+						 'log log ';
+	}
+	
+	.main { /*grid template area for main class*/
+	grid-area: min;
+	}
+	
+	header { /*grid template area for <header> tag*/
+		grid-area: hdr;
+	}
+
+	.login-screen, .register-screen, .add-review-screen, .add-book-page { /*grid template area for Login, register, add-reviews and add-book class*/
+		background-color:rgba(0, 0, 0, 0.6);
+		width: 520px;
+		justify-content: space-evenly;
+		text-align: center;
+		padding:8%;
+	}
+	
+	.reviews-screen { /*grid template area for reviews-screen class*/
+		background-color:rgba(0, 0, 0, 0.6);
+		width: 720px;
+		justify-content: space-evenly;
+		padding:4%;
+	}
+
+	a:link { /*adds color and removes text-decoration from all links before hover*/
+		text-decoration: none;
+		color: rgba(255, 148, 120, 0.8);
+	}
+	a:hover {/*adds text-decoration to all links when hovering*/
+		text-decoration: underline;
+	}
+	
+	table { /*sets table background-color width and justifies its content to the center*/
+		background-color:rgba(0, 0, 0, 0.6);
+		width: 720px;
+		justify-content: space-evenly;
+	}
+
+	td, th { /*sets height, text-align and border-bottom for <td> and <th> tags*/
+		height: 45px;
+		text-align: center;
+		border-bottom: 1px solid  rgba(255, 148, 120, 0.3);
+	}
+	
+	input { /*sets the width, height, padding and border-radius of ALL <input> tags*/
+		width: 18em;
+		height: 2.5em;
+		padding: 4px 4px;
+		border-radius: 4px;
+	}
+	
+	input[type=submit]{ /*sets the background-color, text color and border-radius of <input> tags of SUBMIT type*/
+		background-color: rgba(249, 180, 45, 0.8);
+		color: white;
+		border-radius: 4px;
+	}
+
+

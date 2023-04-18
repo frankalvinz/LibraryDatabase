@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Database</title>
+<link rel="stylesheet" type="text/css" href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+</head>
+
+<body>
+	<header>
+		<h1>LibraryDatabase</h1>
+	</header>
+	
+	<main class="indexGrid">
+	<div class="main">
+		<h2 class="sub-head">Welcome to the Library Database</h2><br>
+		<table class=books>
+			<tr>
+				<th>Title</th> <th>Author</th> <th>Reviews</th>
+			</tr>
+			<tr th:each="book : ${books}" >
+				<td th:text="${book.title}"></td>
+				<td th:text="${book.author}"></td>
+				<td> <a href="#" th:href="|user/books/reviews/${book.id}|">View</a> </td>
+			</tr>
+		</table><br>
+		<div sec:authorize="hasRole('ROLE_ADMIN')"><p><a href="#" th:href="@{/admin/add-book-page}">Add a book</a></p></div><br>
+		<form action="#" th:action="@{/logout}" method="post">
+			<input type="submit" value="logout">
+		</form>
+	</div>
+	</main>
+	
+	<footer>
+	
+	</footer>
+</body>
+</html>

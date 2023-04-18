@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Database</title>
+<link rel="stylesheet" type="text/css" href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+</head>
+
+<body>
+	<header>
+		<h1>LibraryDatabase</h1>
+	</header>
+	
+	<main class="indexGrid">
+	<div class="main">
+		<div class ="reviews-screen" th:if="${reviews.empty}">
+			<h2>No reviews. Be the first to review it!</h2>
+			<p><a href="" th:href="@{/user}">Back Home</a></p>
+		</div>
+		<div class ="reviews-screen" th:unless="${reviews.empty}">
+			<h2 class="sub-head" th:text="|Reviews For ${book.title}|"></h2><br>
+				<ul th:each="review : ${reviews}">
+					<li th:text="${review.text}"></li>
+				</ul><br>
+			<p>Want to leave a review? <a href="#" th:href="@{/user}">Login here</a></p><br>
+			<p><a href="" th:href="@{/}">Back Home</a></p>
+		</div>
+	</div>
+	</main>
+	
+	<footer>
+	
+	</footer>
+</body>
+</html>

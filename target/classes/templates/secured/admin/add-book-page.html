@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Database</title>
+<link rel="stylesheet" type="text/css" href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+<style>
+	table {
+		padding: 8%;
+		Width: 520px;
+	}
+	td, th {
+		border-bottom: 0px;
+	}
+</style>
+</head>
+
+<body>
+	<header>
+		<h1>LibraryDatabase</h1>
+	</header>
+	
+	<main class="indexGrid">
+	<div class="main">
+		<div class="add-book-page">
+			<h2 class="sub-head">Welcome to the Library Database</h2><br>
+			<form action="#" th:action="@{/admin/add-book}" method="post" th:object="${book}">
+				<table class="add-book-screen">
+					<tr>
+						<td ><label for="*{title}">Title: </label></td>
+						<td ><input type="text" th:field="*{title}"></td>
+					</tr>
+					<tr>
+						<td ><label for="*{author}">Author: </label>
+						<td ><input type="text" th:field="*{author}"></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Add Book!"></td>
+					</tr>
+				</table>
+			</form><br>
+		</div>
+		<div class="log-out">
+			<form action="#" th:action="@{/logout}" method="post">
+				<input type="submit" value="logout">
+			</form>
+		</div><br>
+		<p><a href="" th:href="@{/admin}">Back Home</a></p>
+	</div>
+	</main>
+	
+	<footer>
+	
+	</footer>
+</body>
+</html>

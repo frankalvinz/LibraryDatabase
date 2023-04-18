@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<header>
+		<h1>LibraryDatabase</h1>
+	</header>
+	
+	<main class="indexGrid">
+	<div class="login-screen">
+		<h2>Enter your information to log in</h2>
+		<div th:if="${param.error}" style="color: red;">
+			<p>Invalid User Name or Password</p>
+		</div>
+		<br>
+		<div th:if="${param.logout}" style="color: red;">
+			<p>You are now logged out</p>
+		</div>
+		<br>
+		<form action="#" th:action="@{/login}" method="post">	
+			<p>User Name: <input type="text" name="username" /></p>
+			<p>Password: <input type="text" name="password" /></p>		
+			<input type="submit" value="Log In" />	
+		</form>
+		<br>
+		<p>Not registered? <a href="" th:href="@{/register-page}">Register here</a></p>
+	</div>
+	</main>
+	<br>
+	<p><a href="" th:href="@{/}">Back Home</a></p>
+	
+	<footer>
+		
+	</footer>
+
+</body>
+</html>
